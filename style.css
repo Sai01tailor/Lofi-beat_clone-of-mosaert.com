@@ -216,3 +216,99 @@ a:active, a:focus, a:hover,a {
 
 
 
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #hamburger {
+        margin-top: 10px;
+    }
+
+    #footer div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    #footer div div {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    #footer div div div {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    #footer div div div h3 {
+        width: 100%;
+    }
+
+    #langed {
+        width: 100% !important;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    #extra > div:first-child {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #extra > div:nth-child(3) {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #collection {
+        font-size: 1rem;
+    }
+    
+    #body {
+        padding-top: 30vh;
+    }
+
+    video {
+        object-position: center;
+    }
+
+    h1, h3, h4 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #hamburger {
+        width: 40px;
+        height: 30px;
+    }
+
+    #hamburger div {
+        width: 25px;
+        height: 2px;
+    }
+
+    #langed h2 {
+        font-size: 1rem;
+    }
+
+    select {
+        font-size: 0.9rem;
+    }
+
+    #collection li {
+        font-size: 0.9rem;
+    }
+
+    #footer {
+        font-size: 0.8rem;
+    }
+}
