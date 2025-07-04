@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
     user-select: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,7 +20,7 @@ video {
     object-fit: cover;
 }
 
-.header{
+.header {
     position: fixed;
     top: 10px;
     display: flex;
@@ -32,15 +33,18 @@ video {
     margin-inline: auto;
     justify-content: space-evenly;
 }
-#hrHead{
+
+#hrHead {
     width: 0;
     animation: faded 1s ease-in-out;
     animation-delay: 0.2s;
-     animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
-#msg-head{
+
+#msg-head {
     animation: Top 0.5s ease-in-out;
 }
+
 #hamburger {
     display: flex;
     flex-direction: column;
@@ -49,9 +53,10 @@ video {
     width: 50px;
     height: 40px;
     cursor: pointer;
-    animation: Top 0.5s  ease-in-out;
+    animation: Top 0.5s ease-in-out;
     animation-delay: 0.2s;
 }
+
 #hamburger div {
     width: 30px;
     height: 3px;
@@ -61,52 +66,55 @@ video {
     transition: all 0.3s ease;
 }
 
-.header div{
+.header div {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }
+
 .header div h1 {
     margin-left: 10px;
 }
 
-#footer{
+#footer {
     position: fixed;
     bottom: 10px;
-    
     width: 98vw;
-    height: 4vh;  
+    height: 4vh;
     left: 0;
     right: 0;
     bottom: 4vh;
     margin-inline: auto;
     transition: all 1s linear;
 }
+
 #footer div {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
+
 #footer div div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     width: 45%;
 }
-.hrFoot{
+
+.hrFoot {
     height: 2px;
-    width:0;
+    width: 0;
     background-color: #fff;
     border: none;
     animation: faded2 1s ease-in-out;
     animation-delay: 0.2s;
 }
 
-#footer div div h3,#footer div div div {
+#footer div div h3,
+#footer div div div {
     height: 20px;
     padding-left: 10px;
     padding-bottom: 10px;
@@ -118,6 +126,7 @@ video {
     flex-direction: row;
     justify-content: stretch;
 }
+
 #footer div div div h3 {
     margin: 0;
     width: 94%;
@@ -131,18 +140,25 @@ video {
     margin-top: 20px;
     margin-left: 10px;
     position: relative;
+    width: 100%;
 }
-#langed{
-    width: 10% !important;
-    position: absolute; 
+
+#langed {
+    width: 10%;
+    position: absolute;
+    top: 0;
     right: 0;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
+
 #langed h2 {
     font-weight: 200;
     margin-right: 8px;
     font-size: 1.2rem;
 }
+
 select {
     width: 100%;
     height: 30px;
@@ -154,14 +170,22 @@ select {
     border-radius: 5px;
     padding: 5px;
 }
+
+
+
 option {
     background-color: #000;
     color: #fff;
 }
+
 option:hover {
     background-color: #333;
 }
-a:active, a:focus, a:hover,a {
+
+a:active,
+a:focus,
+a:hover,
+a {
     text-decoration: none;
     color: white;
 }
@@ -170,6 +194,7 @@ a:active, a:focus, a:hover,a {
     0% {
         transform: translateY(-100%);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -179,21 +204,24 @@ a:active, a:focus, a:hover,a {
     0% {
         width: 0;
     }
+
     100% {
         width: 98vw;
     }
 }
+
 @keyframes faded2 {
     0% {
         width: 0;
     }
+
     100% {
         width: 98%;
     }
 }
 
-#body{
-    height: 100vh;
+#body {
+    height: 150vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -203,112 +231,139 @@ a:active, a:focus, a:hover,a {
     padding-bottom: 0vh;
 }
 
-#collection{
+#collection {
     text-align: center;
-    width: 100%;
-    height: 10vh;
     width: 95%;
+    height: 10vh;
     padding: 10px;
     margin-top: 20px;
     overflow-y: hidden;
     transition: all 0.5s ease-in-out;
 }
 
-
+/* =============================== */
+/* 📱 RESPONSIVE MOBILE FIXES BELOW */
+/* =============================== */
 
 @media screen and (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .header div {
+    #footer {
+        display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    #hamburger {
-        margin-top: 10px;
-    }
-
-    #footer div {
-        flex-direction: column;
-        align-items: flex-start;
+        height: auto !important;
+        padding: 10px 0;
         gap: 10px;
     }
 
-    #footer div div {
-        width: 100%;
-        align-items: flex-start;
+    #footer > div {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 10px;
     }
 
-    #footer div div div {
-        flex-direction: column;
-        align-items: flex-start;
+    #footer > div > h1 {
+        order: -1;
+        margin-bottom: 10px;
+    }
+
+    .hrFoot {
+        order: 0;
+        width: 90vw !important;
+        margin: 10px auto;
+    }
+
+    #footer > div > div {
+        width: 100% !important;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column !important;
+        gap: 10px;
+    }
+
+    #footer #right,
+    #footer #social,
+    #footer #lang {
+        text-align: center;
         width: 100%;
     }
 
-    #footer div div div h3 {
-        width: 100%;
-    }
 
+    #footer #lang {
+        margin-top: 5px;
+    }
     #langed {
         width: 100% !important;
-        position: relative;
+        position: static !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 10px;
-    }
-
-    #extra > div:first-child {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    #extra > div:nth-child(3) {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    #collection {
-        font-size: 1rem;
-    }
-    
-    #body {
-        padding-top: 30vh;
-    }
-
-    video {
-        object-position: center;
-    }
-
-    h1, h3, h4 {
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    #hamburger {
-        width: 40px;
-        height: 30px;
-    }
-
-    #hamburger div {
-        width: 25px;
-        height: 2px;
+        padding: 0 10px;
     }
 
     #langed h2 {
+        text-align: center;
+        margin: 0 0 5px 0;
         font-size: 1rem;
     }
 
     select {
+        width: 80%;
+        max-width: 200px;
+    }
+
+
+
+    #extra {
+        width: 100% !important;
+        padding: 10px;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    #extra > div:first-child {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 20px;
+        width: 100% !important;
+    }
+
+    #extra > div:first-child h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    #extra > div:nth-child(3) {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 20px;
+        width: 100% !important;
+    }
+
+    #extra > div:nth-child(3) > div {
+        width: 100% !important;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #extra p {
+        margin: 5px 0;
+        word-wrap: break-word;
         font-size: 0.9rem;
     }
 
-    #collection li {
-        font-size: 0.9rem;
+    #extra ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        text-align: center;
     }
 
-    #footer {
-        font-size: 0.8rem;
+    #extra > div:last-child p {
+        text-align: center;
+        font-size: 0.85rem;
+        padding: 10px 0;
+        word-wrap: break-word;
     }
 }
