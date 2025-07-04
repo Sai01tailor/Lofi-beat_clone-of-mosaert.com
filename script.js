@@ -14,7 +14,7 @@ for (let i = 0; i < k.length; i++) {
 document.getElementById("social").addEventListener("click", function() {
     if( document.getElementById("extra").style.display === "none"){
     document.getElementById("extra").style.display = "block";
-    document.getElementById("footer").style.height = "23vh";
+    document.getElementById("footer").style.height = "20vh";
 }
 else{
     document.getElementById("extra").style.display = "none";
@@ -24,7 +24,7 @@ else{
 document.getElementById("lang").addEventListener("click", function() {
     if( document.getElementById("extra").style.display === "none"){
     document.getElementById("extra").style.display = "block";
-    document.getElementById("footer").style.height = "23vh";
+    document.getElementById("footer").style.height = "20vh";
 }
 else{
     document.getElementById("extra").style.display = "none";
@@ -65,10 +65,15 @@ window.addEventListener("scroll", function() {
     var scrollPercentage = (scrollPosition / bodyHeight) * 100;
 
     if (scrollPercentage > 60) {
-        document.getElementById("footer").style.height = "23vh";
+        document.getElementById("footer").style.height = "20vh";
         document.getElementById("extra").style.display = "block";
     } else {
     document.getElementById("extra").style.display = "none";
     document.getElementById("footer").style.height = "5vh";
     }
 });
+
+
+document.getElementById("hamburger").addEventListener("click",()=>{
+    alert("not yet implemented");
+})
